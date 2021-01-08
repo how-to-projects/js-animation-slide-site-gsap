@@ -104,4 +104,91 @@ nav .big-text {
   -webkit-transform: translateY(100%);
           transform: translateY(100%);
 }
+
+#thinky-logo {
+  position: absolute;
+  height: 100px;
+  width: auto;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-animation: fills 0.5s ease forwards 5.5s;
+          animation: fills 0.5s ease forwards 5.5s;
+}
+
+#thinky-logo .paths {
+  stroke: #1f85ad;
+  stroke-miterlimit: 10;
+  stroke-width: 3px;
+}
+
+/*
+* Got these values from the console.log in 
+* thinky function
+*/
+#logo .paths:nth-child(1) {
+  stroke-dasharray: 1859.63013px;
+  stroke-dashoffset: 1859.63013px;
+  -webkit-animation: line-animation 3s ease forwards 0.3s;
+          animation: line-animation 3s ease forwards 0.3s;
+}
+
+#logo .paths:nth-child(2) {
+  stroke-dasharray: 947.15338px;
+  stroke-dashoffset: 947.15338px;
+  -webkit-animation: line-animation 3s ease forwards 0.6s;
+          animation: line-animation 3s ease forwards 0.6s;
+}
+
+#logo .paths:nth-child(3) {
+  stroke-dasharray: 466.77524px;
+  stroke-dashoffset: 466.77524px;
+  -webkit-animation: line-animation 3s ease forwards 0.9s;
+          animation: line-animation 3s ease forwards 0.9s;
+}
+
+#logo .paths:nth-child(4) {
+  stroke-dasharray: 56.18001px;
+  stroke-dashoffset: 56.18001px;
+  -webkit-animation: line-animation 3s ease forwards 1.2s;
+          animation: line-animation 3s ease forwards 1.2s;
+}
+
+#logo .paths:nth-child(5) {
+  stroke-dasharray: 56.18001px;
+  stroke-dashoffset: 56.18001px;
+  -webkit-animation: line-animation 3s ease forwards 1.5s;
+          animation: line-animation 3s ease forwards 1.5s;
+}
+
+@-webkit-keyframes line-animation {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes line-animation {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes fills {
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: #1f85ad;
+  }
+}
+
+@keyframes fills {
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: #1f85ad;
+  }
+}
 /*# sourceMappingURL=styles.css.map */

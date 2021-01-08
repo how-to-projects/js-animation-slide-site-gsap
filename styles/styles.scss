@@ -7,6 +7,8 @@
 }
 
 $darkness: rgb(10, 10, 10);
+$red: #ad1f25;
+$thinky: #1f85ad;
 
 .heebo {
     font-family:'Heebo', sans-serif;
@@ -94,5 +96,60 @@ nav {
     span {
         display: inline-block;
         transform: translateY(100%);
+    }
+}
+
+#thinky-logo {
+    position: absolute;
+    height: 100px;
+    width: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: fills 0.5s ease forwards 5.5s;
+
+    .paths {
+        stroke: $thinky;
+        stroke-miterlimit: 10;
+        stroke-width: 3px;
+    }
+}
+
+/*
+* Got these values from the console.log in 
+* thinky function
+*/
+$thinky-path-lengths: (
+    1: 1859.630126953125,
+    2: 947.1533813476562,
+    3: 466.7752380371094,
+    4: 56.18000793457031,
+    5: 56.18000793457031
+
+);
+
+// select element type #logo path:nth-child(#{ $pos }) {
+// select element by class name #logo .paths:nth-child(#{ $pos }) {
+@each $pos, $length in $thinky-path-lengths {
+    #logo .paths:nth-child(#{ $pos }) {
+        stroke-dasharray: #{ $length }px;
+        stroke-dashoffset: #{ $length }px;
+        animation: line-animation 3s ease forwards #{0.3 * $pos}s;
+    }
+    
+}
+
+@keyframes line-animation {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fills {
+    from {
+        fill: transparent;
+    }
+    to {
+        fill: $thinky;
     }
 }
