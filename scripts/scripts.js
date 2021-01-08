@@ -29,3 +29,17 @@ tl.to('.intro',
 
 tl.fromTo('nav', {opacity: 0}, {opacity: 1, duration: 1});
 tl.fromTo('.big-text', {opacity: 0}, {opacity: 1, duration: 1}, '-=1.40');
+
+
+/**
+ * Animate thinky
+ */
+function thinky() {
+
+    const logo = document.getElementsByClassName('paths');
+
+    for (let i =0; i < logo.length; i++) {
+        console.log(`${i + 1}: ${logo[i].getTotalLength()},`);
+    }
+}
+thinky();
